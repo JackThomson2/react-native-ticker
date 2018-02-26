@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const styles = StyleSheet.create({
     row: {
-        flexDirection: "row",
+        flexDirection: "row-reverse",
         overflow: "hidden",
     },
     hide: {
@@ -25,6 +25,7 @@ const isNumber = (text = "") => !isNaN(parseInt(text, 10));
 const isString = (text = "") => typeof text === "string";
 let numberRange = range(10).map(p => p + "");
 numberRange.unshift(" ");
+numberRange.push("£");
 
 const getAnimationStyle = animation => {
     return {
@@ -164,7 +165,7 @@ class Tick extends Component {
                     height,
                 }),
                 duration,
-                easing: Easing.elastic(2),
+                easing:Easing.elastic(2),
                 useNativeDriver: true,
             }).start();
         }
@@ -195,7 +196,7 @@ class Tick extends Component {
                     height,
                 }),
                 duration,
-                easing: Easing.elastic(2),
+                easing:Easing.elastic(2),
                 useNativeDriver: true,
             }).start();
         }
